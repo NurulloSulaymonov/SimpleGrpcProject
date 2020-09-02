@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Grpc.Core;
 using ShopperProfileServer;
 
@@ -15,12 +16,12 @@ namespace SimpleGrpcProject.Services
             new ShopperDetails(){ ShopperId = "4",Name = "test4"}
         };
 
-        public override GetShopperProfile(ShopperProfileRequest request, Grpc.Core.ServerCallContext context)
+        public override async Task<ShopperProfileResponse> GetShopperProfile(ShopperProfileRequest request, ServerCallContext context)
         {
 
             var shopperDetails = _shopperProfiles.Single(s => s.ShopperId == request.ShopperId);
 
-            return new ShopperProfileResponse() { ShopperDetails = shopperDetails };
+            return await Task.FromResult(new ShopperProfileResponse() { ShopperDetails = shopperDetails });
         }
     }
 }
