@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SimpleGrpcProject.Services;
+using SimpleGrpcServer.Services;
 
-namespace SimpleGrpcProject
+namespace SimpleGrpcServer
 {
     public class Startup
     {
@@ -32,8 +32,7 @@ namespace SimpleGrpcProject
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
-                endpoints.MapGrpcService<ShopperProfileService>();
+                endpoints.MapGrpcService<LoginService>();
 
                 endpoints.MapGet("/", async context =>
                 {

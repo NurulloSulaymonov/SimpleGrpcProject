@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\shopper-profile.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\login-profile.proto" GrpcServices="Server" />
   </ItemGroup>  
   
 

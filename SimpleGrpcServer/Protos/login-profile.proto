@@ -1,0 +1,24 @@
+﻿// Protos/credit-rating-service.proto
+
+syntax = "proto3";
+
+option csharp_namespace = "LoginProfileServer";
+
+package login;
+
+service LoginProfile {
+  rpc GetLoginProfile (LoginRequest) returns (LoginResponse);
+}
+
+message LoginRequest {
+  string Num = 1;
+  string Pass = 2;
+  string ApplicationVersion = 5;
+	}
+
+message LoginResponse {
+  int32 Code = 1;
+  string Message = 2;
+  string Time = 3; 
+  string UserName = 4;
+  }
